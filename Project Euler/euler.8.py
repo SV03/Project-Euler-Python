@@ -12,3 +12,18 @@ data = "731671765313306249192251196744265747423553491949349698352031277450\
 03850962455444362981230987879927244284909188845801561660979191338754992005\
 24063689912560717606058861164671094050775410022569831552000559357297257163\
 6269561882670428252483600823257530420752963450"
+
+def largest_product(data, length):
+    current = 0
+    for i in xrange(0, len(data) - length):
+        part= data[i:i+length]
+        product = 1
+        for char in part:
+            product *= int(char)
+        if product > current:
+            current = product
+    return current
+
+
+if __name__ == "__main__":
+    print str(largest_product(data, 13))
